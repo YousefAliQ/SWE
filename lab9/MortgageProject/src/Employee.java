@@ -4,18 +4,18 @@ public class Employee {
 	 int monthOfBirth;
 	 int dayOfBirth;
 	 double isMonthlyIncome;
-	 boolean isMarried;
+	 MartialStatus martialStatus;
 	 double hasMonthlyIncomePartner;
 	 Profession profession;
 	 
 	 // TODO : break employee class down ... 
-	public Employee(int yearOfBirth, int monthOfBirth, int dayOfBirth, double isMonthlyIncome, boolean isMarried, double hasMonthlyIncomePartner, Profession profession) {
+	public Employee(int yearOfBirth, int monthOfBirth, int dayOfBirth, double isMonthlyIncome, MartialStatus martialStatus, double hasMonthlyIncomePartner, Profession profession) {
 		
-		this.yearOfBirth = yearOfBirth;
+		this.yearOfBirth = yearOfBirth;	
 		this.monthOfBirth = monthOfBirth;
 		this.dayOfBirth = dayOfBirth;
 		this.isMonthlyIncome = isMonthlyIncome;
-		this.isMarried = isMarried;
+		this.martialStatus = martialStatus;
 		this.hasMonthlyIncomePartner = hasMonthlyIncomePartner;
 		this.profession = profession;
 	}
@@ -52,12 +52,13 @@ public class Employee {
 		this.isMonthlyIncome = isMonthlyIncome;
 	}
 
-	public boolean isMarried() {
-		return isMarried;
+
+	public MartialStatus getMartialStatus() {
+		return martialStatus;
 	}
 
-	public void setMarried(boolean isMarried) {
-		this.isMarried = isMarried;
+	public void setMartialStatus(MartialStatus martialStatus) {
+		this.martialStatus = martialStatus;
 	}
 
 	public double getHasMonthlyIncomePartner() {

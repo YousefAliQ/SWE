@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -9,10 +8,11 @@ public class MortgageCalculator {
 		printEmployeeAge(employee);
 		if ( ! isAdult(employee)) return 0;
 		
-		if (! employee.isMarried()) return calculateSingleEmployee(employee);
+		if ( employee.getMartialStatus() == MartialStatus.Single)
+			return calculateSingleEmployee(employee);
 		return  calculateMarriedEmployee(employee);
 		
-	}
+	}	
 	
 	private double calculateSingleEmployee(Employee employee) {
 		
