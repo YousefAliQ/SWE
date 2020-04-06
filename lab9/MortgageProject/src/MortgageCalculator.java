@@ -8,7 +8,7 @@ public class MortgageCalculator {
 		printEmployeeAge(employee);
 		if ( ! isAdult(employee)) return 0;
 		
-		if ( employee.getMartialStatus() == MartialStatus.Single)
+		if ( employee.getMartialStatus() == MaritalStatus.Single)
 			return calculateSingleEmployee(employee);
 		return  calculateMarriedEmployee(employee);
 		

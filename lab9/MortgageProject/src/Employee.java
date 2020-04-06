@@ -4,18 +4,18 @@ public class Employee {
 	 int monthOfBirth;
 	 int dayOfBirth;
 	 double isMonthlyIncome;
-	 MartialStatus martialStatus;
+	 MaritalStatus maritalStatus;
 	 double hasMonthlyIncomePartner;
 	 Profession profession;
 	 
 	 // TODO : break employee class down ... 
-	public Employee(int yearOfBirth, int monthOfBirth, int dayOfBirth, double isMonthlyIncome, MartialStatus martialStatus, double hasMonthlyIncomePartner, Profession profession) {
+	public Employee(int yearOfBirth, int monthOfBirth, int dayOfBirth, double isMonthlyIncome, MaritalStatus maritalStatus, double hasMonthlyIncomePartner, Profession profession) {
 		
 		this.yearOfBirth = yearOfBirth;	
 		this.monthOfBirth = monthOfBirth;
 		this.dayOfBirth = dayOfBirth;
 		this.isMonthlyIncome = isMonthlyIncome;
-		this.martialStatus = martialStatus;
+		this.maritalStatus = maritalStatus;
 		this.hasMonthlyIncomePartner = hasMonthlyIncomePartner;
 		this.profession = profession;
 	}
@@ -53,12 +53,12 @@ public class Employee {
 	}
 
 
-	public MartialStatus getMartialStatus() {
-		return martialStatus;
+	public MaritalStatus getMartialStatus() {
+		return maritalStatus;
 	}
 
-	public void setMartialStatus(MartialStatus martialStatus) {
-		this.martialStatus = martialStatus;
+	public void setMartialStatus(MaritalStatus maritalStatus) {
+		this.maritalStatus = maritalStatus;
 	}
 
 	public double getHasMonthlyIncomePartner() {

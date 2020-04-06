@@ -1,4 +1,4 @@
 
-public enum MartialStatus {
+public enum MaritalStatus {
 Married, Single
 }
