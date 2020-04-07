@@ -3,17 +3,19 @@ package bank;
 public class Account {
 	private double balance;
 	private AccountType type;
+	private String customerName;
 	
 	
 	private CurrencyConverter currencyConverter = new CurrencyConverter();
 
-	public void deposit(double amount) {
+	public void depositDollar(double amount) {
 		if (amount >= 0.0) {
 			balance = balance + amount;
 		}
 	}
 
-	public void withdraw(double amount) {
+	public void withdrawDollar(double amount) {
+		if (this.balance < amount) throw new ArithmeticException();
 		if (amount >= 0.0) {
 			balance = balance - amount;
 		}
@@ -22,14 +24,15 @@ public class Account {
 	public void depositEuros(double amount) {
 		if (amount >= 0.0) {
 			double dollarAmount = currencyConverter.convertEurosToDollars(amount);
-			deposit(dollarAmount);
+			depositDollar(dollarAmount);
 		}
 	}
 
 	public void withdrawEuros(double amount) {
+		if (this.balance < amount) throw new ArithmeticException();
 		if (amount >= 0.0) {
 			double dollarAmount = currencyConverter.convertEurosToDollars(amount);
-			withdraw(dollarAmount);
+			withdrawDollar(dollarAmount);
 		}
 	}
 	public void addInterest() {
@@ -48,19 +51,19 @@ public class Account {
 	private void addInterestToSaving() {
 		if(this.getBalance() <= 1000) {
 			double interest = calculateInterest(1.0);
-			this.deposit(interest);
+			this.depositDollar(interest);
 			return;
 		}
 		
 		if(this.getBalance() <= 5000) {
 			double interest = calculateInterest(2.0);
-			this.deposit(interest);
+			this.depositDollar(interest);
 			return;
 		}
 		
 		if(this.getBalance() > 5000) {
 			double interest = calculateInterest(4.0);
-			this.deposit(interest);
+			this.depositDollar(interest);
 			return;
 		}
 	}
@@ -68,13 +71,13 @@ public class Account {
 	private void addInterestToChecking() {
 		if(this.getBalance() <= 1000) {
 			double interest = calculateInterest(1.5);
-			this.deposit(interest);
+			this.depositDollar(interest);
 			return;
 		}
 		
 		if(this.getBalance() > 1000) {
 			double interest = calculateInterest(2.5);
-			this.deposit(interest);
+			this.depositDollar(interest);
 			return;
 		}
 	}
@@ -86,6 +89,17 @@ public class Account {
 	}
 
 
+
+	public void transferDollarTo(Account accountTransferTo, double amount) {
+		this.withdrawDollar(amount);
+		accountTransferTo.depositDollar(amount);
+	}
+	
+	public void transferEuroTo(Account accountTransferTo, double amount) {
+		this.withdrawEuros(amount);
+		accountTransferTo.depositEuros(amount);
+	}
+	
 	public double getBalance() {
 		return balance;
 	}
@@ -98,5 +112,14 @@ public class Account {
 		this.type = type;
 	}
 
+	public String getCustomerName() {
+		return customerName;
+	}
+
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+
+	
 
 }
