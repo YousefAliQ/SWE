@@ -1,0 +1,71 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 7,
+        "name": "Deposit 100 dollar",
+        "description": "",
+        "id": "banking;deposit-100-dollar",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 469392188,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "the user has a bankaccount",
+            "match": {
+              "location": "DepositSteps.the_user_has_a_bankaccount()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 15981601,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the user deposits 100 dollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "100",
+                  "offset": 18
+                }
+              ],
+              "location": "DepositSteps.the_user_deposits_dollars(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 16295914,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "the amount of the bankaccount should be increased by 100 dollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "100",
+                  "offset": 53
+                }
+              ],
+              "location": "DepositSteps.the_amount_of_the_bankaccount_should_be_increased_by_dollars(int)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Banking",
+    "description": "  As a user with a bankaccount\n  I want to deposit money\n  So that I have more money in my account",
+    "id": "banking",
+    "keyword": "Feature",
+    "uri": "cucumber/Banking.feature",
+    "tags": []
+  }
+]
